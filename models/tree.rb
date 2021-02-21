@@ -31,7 +31,7 @@ class Tree
       level += 1
       node.print
       node.children.each do |value|
-        GreatConsoleOutput.make_space(level)
+        #GreatConsoleOutput.make_space(level)
         print_tree(value, level)
       end
     end

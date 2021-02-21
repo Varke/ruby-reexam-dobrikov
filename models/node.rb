@@ -12,6 +12,6 @@ class Node
   end
 
   def print
-    puts "#{@title} [#{@description}]"
+    "#{@title} [#{@description}]"
   end
 end

@@ -2,4 +2,12 @@
 
 source "https://rubygems.org"
 
-gem 'rubocop'
+gem 'puma'
+gem 'rack'
+gem 'roda'
+gem 'tilt'
+
+group :development do
+    gem 'rerun'
+    gem 'rubocop'
+end
