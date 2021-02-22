@@ -2,7 +2,7 @@
 
 # The class describing what a tree node looks like
 class Node
-  attr_accessor :children, :title, :description, :parent
+  attr_accessor :title, :description, :children, :parent
 
   def initialize(title, description, children, parent)
     @title = title
@@ -12,7 +12,11 @@ class Node
   end
 
   def print
-    puts "#{@title} [#{@description}]"
+    gav = ''
+    children.each do |sam|
+      gav.concat(sam.title)
+    end
+    puts "#{@title}. Мои дети #{gav}"
   end
 
   def add_children(node)

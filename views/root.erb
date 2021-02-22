@@ -1,0 +1,22 @@
+
+<div class="grid-x grid-padding-x">
+    <div class="large-12 cell">
+      <h3>Корень дерева</h3>
+    </div>
+</div>
+
+<div class="large-12 cell">
+
+<div class ="callout">
+<h2><%= @node.title %></h2>
+<h4><%= @node.description%></h4>
+<form>
+<div class="large-6 cell">
+  <% @node.children.each do |valuec|%>
+  <input type="submit" class="button" name="key" value="<%= valuec.title %>"> 
+  <% end %>
+</div>
+</form>
+</div>
+
+</div>
