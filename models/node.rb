@@ -12,6 +12,10 @@ class Node
   end
 
   def print
-    "#{@title} [#{@description}]"
+    puts "#{@title} [#{@description}]"
+  end
+
+  def add_children(node)
+    children.append(node)
   end
 end

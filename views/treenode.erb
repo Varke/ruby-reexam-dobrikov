@@ -1,15 +1,20 @@
 
 <div class="grid-x grid-padding-x">
     <div class="large-12 cell">
-      <h3>Дерево</h3>
+      <h3>Отображение узла дерева</h3>
     </div>
 </div>
 
 <div class="large-12 cell">
 
+<div class ="callout">
+<h2><%= @my_tree.root.title %></h2>
+<h4><%= @my_tree.root.description%></h4>
 <ul>
-
-  <li><%= my_tree.print %></li>
-
+<% @my_tree.root.children.each do |value|%>
+<li><%= value.title %></li>
+<% end %>
 </ul>
+</div>
+
 </div>
