@@ -27,11 +27,11 @@ class App < Roda
     r.on 'root' do
       @params = InputValidators.check_key(r.params['key'])
 
-      if @params[:key].empty?
-        @node = @my_tree.root
-      else
-        @node = @my_tree.find_node(@params[:key])
-      end
+      @node = if @params[:key].empty?
+                @my_tree.root
+              else
+                @my_tree.find_node(@params[:key])
+              end
       view('root')
     end
   end

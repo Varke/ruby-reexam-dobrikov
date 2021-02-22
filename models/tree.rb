@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require_relative 'node'
-require_relative 'great_console_output'
 
 # The class describes as a tree looks like
 class Tree
