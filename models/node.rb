@@ -11,12 +11,9 @@ class Node
     @parent = parent
   end
 
+  # Only for debugging
   def print
-    gav = ''
-    children.each do |sam|
-      gav.concat(sam.title)
-    end
-    puts "#{@title}. Мои дети #{gav}"
+    puts "#{@title}. Описание: #{@description}"
   end
 
   def add_children(node)

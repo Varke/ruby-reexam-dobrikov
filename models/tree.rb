@@ -24,6 +24,7 @@ class Tree
     nil
   end
 
+  # for debugging
   def print_tree(node, level)
     if @root.nil?
       puts 'The tree is empty'
@@ -31,7 +32,6 @@ class Tree
       level += 1
       node.print
       node.children.each do |value|
-        GreatConsoleOutput.make_space(level)
         print_tree(value, level)
       end
     end
