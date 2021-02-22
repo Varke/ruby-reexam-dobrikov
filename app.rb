@@ -20,7 +20,6 @@ class App < Roda
     @my_tree = Tree.new
     @my_tree.init_from_parsed_file(ParseJsonFile.parsed_data, nil)
     @node = @my_tree.root
-
     r.root do
       'Hello World'
     end
@@ -28,12 +27,11 @@ class App < Roda
     r.on 'root' do
       @params = InputValidators.check_key(r.params['key'])
 
-      @node = if @params[:key].empty?
-                @my_tree.root
-              else
-                @my_tree.find_node(@params[:key])
-              end
-
+      if @params[:key].empty?
+        @node = @my_tree.root
+      else
+        @node = @my_tree.find_node(@params[:key])
+      end
       view('root')
     end
   end

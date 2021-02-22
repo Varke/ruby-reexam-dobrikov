@@ -1,7 +1,13 @@
 
 <div class="grid-x grid-padding-x">
     <div class="large-12 cell">
+    <% if @node == @my_tree.root %>
       <h3>Корень дерева</h3>
+      <% elsif @node.children.empty? %>
+      <h3>Данный узел является листом дерева</h3>
+      <% else %>
+      <h3>Узел дерева</h3>
+      <%end%>
     </div>
 </div>
 
@@ -18,5 +24,15 @@
 </div>
 </form>
 </div>
+
+<form>
+<div class="large-6 cell">
+  <% if @node != @my_tree.root %>
+  <h3>Чтобы вернуться к родителю элемента нажмите на кнопку</h3>
+  <input type="submit" class="button" name="key" value="<%= @node.parent.title %>">
+  <% end %>
+</div>
+</form>
+
 
 </div>
